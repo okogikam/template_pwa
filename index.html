@@ -9,10 +9,6 @@
 
     <!-- Theme style -->
     <link rel="stylesheet" href="./dist/css/adminlte.min.css" />
-    <script
-      src="https://kit.fontawesome.com/a121d47811.js"
-      crossorigin="anonymous"
-    ></script>
     <!-- Google Font: Source Sans Pro -->
     <link
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
@@ -20,25 +16,66 @@
     />
     <link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/a121d47811.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
+      .lockscreen,
+      .lockscreen-wrapper {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+      }
       .lockscreen-item {
         text-align: center;
+      }
+      .icon {
+        width: 50vw;
+        height: 50vw;
+        overflow: hidden;
+        margin: 10px;
+        border-radius: 50%;
+
+        display: flex;
+        margin: 10px auto;
+      }
+      .menu {
+        /* width: 100vw; */
+        background-color: var(--primary);
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 5px 0px;
+      }
+      .menu-link {
+        font-size: 30px;
+        color: var(--white);
+        /* background-color: black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+      }
+      .menu-link span {
+        font-size: 12px;
       }
     </style>
   </head>
   <body class="hold-transition lockscreen">
     <!-- Automatic element centering -->
     <div class="lockscreen-wrapper">
-      <div class="lockscreen-logo">
-        <!-- <h3><b>Anime Girl Wallpaper</b></h3> -->
-      </div>
-      <!-- User name -->
-      <!-- <div class="lockscreen-name">
-    <h4>Anime Girl Wallpaper</h4>
-    <p>Anime Girl Wallpapers Collection HD</p>
-  </div> -->
+      <div class="lockscreen-logo"></div>
 
       <!-- START LOCK SCREEN ITEM -->
+      <div class="icon">
+        <img src="./dist/img/AdminLTELogo.png" alt="" srcset="" />
+      </div>
       <div class="lockscreen-item">
         <a href="./homepage.html"
           ><button class="btn btn-defult btn-lanjut">
@@ -48,6 +85,24 @@
       </div>
       <div class="install-pwa">
         <button class="btn btn-install">install</button>
+      </div>
+      <div class="menu">
+        <a href="#" class="menu-link">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <a href="#" class="menu-link">
+          <i class="fa-solid fa-chess-board"></i>
+          <span>Level</span>
+        </a>
+        <a href="#" class="menu-link">
+          <i class="fa-solid fa-chess-board"></i>
+          <span>Costume</span>
+        </a>
+        <a href="#" class="menu-link">
+          <i class="fa-solid fa-trophy"></i>
+          <span>Score</span>
+        </a>
       </div>
     </div>
     <!-- /.center -->
