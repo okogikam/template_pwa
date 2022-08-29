@@ -15,10 +15,10 @@
       "purpose": "any"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "/template_pwa/",
   "background_color": "#007bff",
   "display": "standalone",
-  "scope": "/",
+  "scope": "/template_pwa/",
   "theme_color": "#fff",
   "crossorigin": "use-credetials"
 }
