@@ -15,7 +15,7 @@
       "purpose": "any"
     }
   ],
-  "start_url": "/",
+  "start_url": "/template_pwa/index.html",
   "background_color": "#007bff",
   "display": "standalone",
   "scope": "/template_pwa/",
