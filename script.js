@@ -36,17 +36,3 @@ buttonInstall.addEventListener("click", async () => {
   console.log(`User respons to install promt: ${outcome}`);
   deferredPrompt = null;
 });
-
-var galleryAll = document.querySelectorAll(".img-gallery");
-var a = 10;
-function tampilkanImg(x) {
-  var maks = galleryAll.length;
-  if (x > maks) {
-    x = maks;
-  }
-  for (var i = 0; i < x; i++) {
-    galleryAll[i].style.display = "block";
-  }
-}
-
-tampilkanImg(a);
