@@ -1,0 +1,135 @@
+.content,
+.content-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.lockscreen-item {
+  text-align: center;
+}
+.icon {
+  width: 50vw;
+  height: 50vw;
+  overflow: hidden;
+  margin: 10px;
+  border-radius: 50%;
+
+  display: flex;
+  margin: 10px auto;
+}
+.menu {
+  /* width: 100vw; */
+  background-color: var(--primary);
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px 0px;
+}
+.menu-link {
+  font-size: 30px;
+  color: var(--white);
+  /* background-color: black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.menu-link span {
+  font-size: 12px;
+}
+
+.card-img img {
+  max-width: 100%;
+  /* position: absolute; */
+  /* top: -50px; */
+  /* left: 30px; */
+  transition: 1s;
+
+  border-radius: 10px;
+}
+.eazy {
+  box-shadow: 8px 8px 0px -3px #17a2b8;
+  -webkit-box-shadow: 8px 8px 0px -3px #17a2b8;
+  -moz-box-shadow: 8px 8px 0px -3px #17a2b8;
+}
+.card:hover .eazy {
+  box-shadow: 8px -8px 0px -3px #17a2b8;
+  -webkit-box-shadow: 8px -8px 0px -3px #17a2b8;
+  -moz-box-shadow: 8px -8px 0px -3px #17a2b8;
+}
+.medium {
+  box-shadow: 8px 8px 0px -3px #ffc107;
+  -webkit-box-shadow: 8px 8px 0px -3px #ffc107;
+  -moz-box-shadow: 8px 8px 0px -3px #ffc107;
+}
+.card:hover .medium {
+  box-shadow: 8px -8px 0px -3px #ffc107;
+  -webkit-box-shadow: 8px -8px 0px -3px #ffc107;
+  -moz-box-shadow: 8px -8px 0px -3px #ffc107;
+}
+.hard {
+  box-shadow: 8px 8px 0px -3px #dc3545;
+  -webkit-box-shadow: 8px 8px 0px -3px #dc3545;
+  -moz-box-shadow: 8px 8px 0px -3px #dc3545;
+}
+.card:hover .hard {
+  box-shadow: 8px -8px 0px -3px #dc3545;
+  -webkit-box-shadow: 8px -8px 0px -3px #dc3545;
+  -moz-box-shadow: 8px -8px 0px -3px #dc3545;
+}
+.card:hover img {
+  transform: scale(1.1);
+  border-width: 5px;
+}
+.stage-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page {
+  max-width: 100%;
+  padding: 10px 10px 50px 10px;
+
+  overflow-x: hidden;
+}
+
+.stage {
+  --stage: 10;
+  --tile: 28px;
+  /* min 2 maks 15 */
+  display: grid;
+  grid-template-columns: repeat(var(--stage), calc(90vw / var(--stage)));
+  grid-template-rows: repeat(var(--stage), calc(90vw / var(--stage)));
+  background-color: #17a2b8;
+  gap: 1px;
+  width: min-content;
+}
+.tile {
+  background-color: #dc3545;
+}
+.info-score {
+  width: 80%;
+  height: 300px;
+}
+.waktu,
+.bom {
+  text-align: center;
+}
+.waktu {
+  background-color: var(--info);
+  border-radius: 10px 0px 0px 10px;
+  overflow: hidden;
+  color: var(--white);
+}
+.bom {
+  background-color: var(--red);
+  border-radius: 0px 10px 10px 0px;
+  overflow: hidden;
+  color: var(--white);
+}

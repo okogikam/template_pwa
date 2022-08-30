@@ -21,7 +21,36 @@
       src="https://kit.fontawesome.com/a121d47811.js"
       crossorigin="anonymous"
     ></script>
-    <style></style>
+    <style>
+      .btn-tambah {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+      }
+      .btn-tambah .btn {
+        border-radius: 50%;
+        background-color: rgba(9, 9, 246, 0.49);
+        border: none;
+      }
+      .form-tambah {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-color: var(--primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+      .form-tambah .card {
+        max-width: 600px;
+      }
+      .num-input {
+        width: 60px;
+      }
+    </style>
   </head>
   <body class="hold-transition content">
     <!-- Automatic element centering -->
@@ -96,6 +125,11 @@
         <!-- /.col-md-4 -->
       </div>
       <!-- /.row -->
+      <div class="btn-tambah">
+        <button onclick="formShow()" class="btn btn-primary">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
       <div class="menu">
         <a href="index.html" class="menu-link">
           <i class="fas fa-home"></i>
@@ -110,6 +144,33 @@
           <span>Score</span>
         </a>
       </div>
+      <!-- Control Sidebar -->
+      <div class="form-tambah d-none">
+        <form action="#" method="POST" class="card col-10 font-weight-light">
+          <div class="card-header">
+            <h4 class="font-weight-light">Add Costume Stage</h4>
+          </div>
+          <div class="card-body">
+            <p>Name : <input type="text" class="form-control" /></p>
+            <p>
+              Stage :
+              <input class="num-input" type="number" min="1" max="50" /> x
+              <input type="number" class="num-input" min="1" max="50" />
+            </p>
+            <p>
+              Boms :
+              <input class="num-input" type="number" class="form-control" />
+            </p>
+          </div>
+          <div class="card-footer text-right">
+            <input type="submit" value="Tambah" class="btn btn-primary" />
+            <button type="button" onclick="formShow()" class="btn btn-danger">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- /.control-sidebar -->
     </div>
     <!-- /.center -->
     <aside>
@@ -117,5 +178,19 @@
         <button class="btn btn-install">install</button>
       </div>
     </aside>
+
+    <script>
+      var loadImg = document.querySelector(".loading-page");
+      var formTambah = document.querySelector(".form-tambah");
+
+      window.onload = function () {
+        loadImg.classList.add("load-out");
+        console.log("5 detik");
+      };
+
+      function formShow() {
+        formTambah.classList.toggle("d-none");
+      }
+    </script>
   </body>
 </html>
