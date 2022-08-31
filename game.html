@@ -21,18 +21,7 @@
       src="https://kit.fontawesome.com/a121d47811.js"
       crossorigin="anonymous"
     ></script>
-    <style>
-      .btn-back {
-        position: absolute;
-        left: 10px;
-        top: 10px;
-      }
-      .btn-control {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-      }
-    </style>
+    <style></style>
   </head>
   <body class="hold-transition content">
     <!-- Automatic element centering -->
@@ -47,7 +36,7 @@
       <button class="btn btn-default">
         <i class="fa-solid fa-play"></i>
       </button>
-      <button class="btn btn-default">
+      <button class="btn btn-default stop">
         <i class="fa-solid fa-pause"></i>
       </button>
       <button class="btn btn-default">
@@ -77,27 +66,32 @@
           </div>
         </div>
       </div>
-      <!-- /.row -->
-      <div class="menu">
-        <a href="index.html" class="menu-link">
-          <i class="fas fa-home"></i>
-          <span>Home</span>
-        </a>
-        <a href="costume.html" class="menu-link">
-          <i class="fa-solid fa-chess-board"></i>
-          <span>Costume</span>
-        </a>
-        <a href="score.html" class="menu-link">
-          <i class="fa-solid fa-trophy"></i>
-          <span>Score</span>
-        </a>
+      <div class="score d-none">
+        <!-- Control sidebar content goes here -->
+        <div class="card info-score">
+          <div>
+            <p>Congratulation</p>
+            <p>Rank: 1</p>
+          </div>
+          <div>
+            <p><input type="text" placeholder="name" name="name" /></p>
+            <p>Your Times:</p>
+            <p>00:01:00</p>
+          </div>
+          <a href="./score.html">
+            <button type="submit" class="btn btn-primary">OK</button>
+          </a>
+        </div>
       </div>
     </div>
-    <!-- /.center -->
-    <aside>
-      <div class="install-pwa">
-        <button class="btn btn-install">install</button>
-      </div>
-    </aside>
+
+    <script>
+      let btnStop = document.querySelector(".stop");
+      let scoreInfo = document.querySelector(".score");
+
+      btnStop.addEventListener("click", function () {
+        scoreInfo.classList.toggle("d-none");
+      });
+    </script>
   </body>
 </html>
