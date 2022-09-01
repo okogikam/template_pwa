@@ -21,6 +21,7 @@
       src="https://kit.fontawesome.com/a121d47811.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./game.js" type="module"></script>
     <style></style>
   </head>
   <body class="hold-transition content">
@@ -34,9 +35,12 @@
     </div>
     <div class="btn-control">
       <button class="btn btn-default">
-        <i class="fa-solid fa-play"></i>
+        <i class="fa-solid fa-pen-to-square"></i>
       </button>
-      <button class="btn btn-default stop">
+      <button class="btn btn-default btn-reset">
+        <i class="fa-solid fa-rotate-right"></i>
+      </button>
+      <button class="btn btn-default btn-stop">
         <i class="fa-solid fa-pause"></i>
       </button>
       <button class="btn btn-default">
@@ -49,20 +53,22 @@
           <div class="detail">
             <div class="row">
               <div class="col-6 waktu">
-                <span class="">Times: 00:00:01</span>
+                Times: <span data-time class="">0s</span>
               </div>
               <div class="col-6 bom">
-                <span class="">Bom: 1/10</span>
+                <span class=""
+                  >Bom: <span data-mine-count></span>/ <span data-mine></span>
+                </span>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6 m-0 p-0">
-          <div class="stage m-0 p-0">
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <!-- <div class="tile"></div> -->
+        <div class="col-sm-12 col-md-6 m-0 p-0 board">
+          <div class="stage m-0 p-0"></div>
+          <div class="start-game">
+            <button class="btn-start-game">
+              <i class="fa-regular fa-circle-play"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -70,13 +76,13 @@
         <!-- Control sidebar content goes here -->
         <div class="card info-score">
           <div>
-            <p>Congratulation</p>
+            <p><span class="subtext"></span></p>
             <p>Rank: 1</p>
           </div>
           <div>
             <p><input type="text" placeholder="name" name="name" /></p>
             <p>Your Times:</p>
-            <p>00:01:00</p>
+            <p><span class="score-time"></span></p>
           </div>
           <a href="./score.html">
             <button type="submit" class="btn btn-primary">OK</button>
@@ -86,12 +92,12 @@
     </div>
 
     <script>
-      let btnStop = document.querySelector(".stop");
-      let scoreInfo = document.querySelector(".score");
+      // let btnStop = document.querySelector(".stop");
+      // let scoreInfo = document.querySelector(".score");
 
-      btnStop.addEventListener("click", function () {
-        scoreInfo.classList.toggle("d-none");
-      });
+      // btnStop.addEventListener("click", function () {
+      //   scoreInfo.classList.toggle("d-none");
+      // });
     </script>
   </body>
 </html>

@@ -27,12 +27,12 @@ window.addEventListener("beforeinstallprompt", (e) => {
   console.log(`'beforeinstallprompt' event was fired.`);
 });
 // showInstallPromotion();
-var buttonInstall = document.querySelector(".btn-install");
+// var buttonInstall = document.querySelector(".btn-install");
 
-buttonInstall.addEventListener("click", async () => {
-  hideInstallPromotion();
-  deferredPrompt.prompt();
-  const { outcome } = await deferredPrompt.userChoice;
-  console.log(`User respons to install promt: ${outcome}`);
-  deferredPrompt = null;
-});
+// buttonInstall.addEventListener("click", async () => {
+//   hideInstallPromotion();
+//   deferredPrompt.prompt();
+//   const { outcome } = await deferredPrompt.userChoice;
+//   console.log(`User respons to install promt: ${outcome}`);
+//   deferredPrompt = null;
+// });
