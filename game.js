@@ -9,8 +9,43 @@ import {
   cheskLose,
 } from "./minesweeper.js";
 
-const BOARD_SIZE = 15;
-const NUMBER_OF_MINE = 15;
+const level = [
+  {
+    stage: "eazy",
+    size: 5,
+    bom: 5,
+  },
+  {
+    stage: "medium",
+    size: 5,
+    bom: 10,
+  },
+  {
+    stage: "hard",
+    size: 20,
+    bom: 20,
+  },
+];
+
+function stageNow() {
+  let tmp = window.location.search.substr(1).split("=");
+  let stage;
+
+  let stageNow = tmp[1];
+  level.forEach(function (value) {
+    if (value["stage"] == stageNow) {
+      stage = value;
+    }
+  });
+
+  return stage;
+}
+
+let stage = stageNow();
+// stageNow();
+
+const BOARD_SIZE = stage["size"];
+const NUMBER_OF_MINE = stage["bom"];
 
 const board = createBoard(BOARD_SIZE, NUMBER_OF_MINE);
 const boardElement = document.querySelector(".stage");
