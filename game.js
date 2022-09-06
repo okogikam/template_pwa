@@ -13,11 +13,11 @@ const level = [
   {
     stage: "eazy",
     size: 5,
-    bom: 5,
+    bom: 3,
   },
   {
     stage: "medium",
-    size: 5,
+    size: 10,
     bom: 10,
   },
   {
@@ -54,6 +54,7 @@ const minesAll = document.querySelector("[data-mine]");
 const messageText = document.querySelector(".subtext");
 const score = document.querySelector(".score");
 const btnReset = document.querySelector(".btn-reset");
+const btnPlay = document.querySelector(".btn-play");
 const btnStart = document.querySelector(".btn-start-game");
 const btnStop = document.querySelector(".btn-stop");
 const start = document.querySelector(".start-game");
@@ -82,9 +83,22 @@ btnStart.addEventListener("click", () => {
   start.classList.add("d-none");
   let times = time();
 });
+
+// time
+let x = 0;
+let y = setInterval(() => {
+  x++;
+}, 1000);
 btnStop.addEventListener("click", (times) => {
-  clearInterval(times);
+  clearInterval(y);
+  console.log(x);
 });
+btnPlay.addEventListener("click", (times) => {
+  y = setInterval(() => {
+    x++;
+  }, 1000);
+});
+
 boardElement.style.setProperty("--stage", BOARD_SIZE);
 minesAll.textContent = NUMBER_OF_MINE;
 minesLeftText.textContent = 0;
