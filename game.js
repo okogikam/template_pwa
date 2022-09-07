@@ -80,22 +80,34 @@ btnReset.addEventListener("click", () => {
   location.reload();
 });
 btnStart.addEventListener("click", () => {
-  start.classList.add("d-none");
-  let times = time();
+  // start.classList.add("d-none");
+  // let y = setInterval(() => {
+  //   x++;
+  //   tr = timeRecord(x);
+  //   updateTime(tr);
+  // }, 1000);
 });
-
+start.classList.add("d-none");
 // time
-let x = 0;
+let x = 0,
+  tr;
 let y = setInterval(() => {
   x++;
+  tr = timeRecord(x);
+  updateTime(tr);
 }, 1000);
+
 btnStop.addEventListener("click", (times) => {
   clearInterval(y);
-  console.log(x);
+  // console.log(x);
+  tr = timeRecord(x);
+  updateTime(tr);
 });
 btnPlay.addEventListener("click", (times) => {
   y = setInterval(() => {
     x++;
+    tr = timeRecord(x);
+    updateTime(tr);
   }, 1000);
 });
 
@@ -125,7 +137,7 @@ function checkGameEND() {
 
   if (win) {
     messageText.textContent = "You Win";
-    scoreTime.textContent = timeScore;
+    scoreTime.textContent = timeRecord(x);
   }
   if (lose) {
     messageText.textContent = "You Lose";
@@ -143,32 +155,73 @@ function stopProp(e) {
   e.stopImmediatePropagation();
 }
 
-function time() {
-  setInterval(() => {
-    timeScore += 1;
-    let timeNow = "";
-    let second = 0;
-    let menit = 0;
-    let jam = 0;
-    if (timeScore < 60) {
-      second = timeScore;
-      timeNow = second + "s";
-    }
-    if (timeScore >= 60 && timeScore < 3600) {
-      second = timeScore % 60;
-      menit = Math.floor(timeScore / 60);
-      timeNow = menit + "m" + second + "s";
-    }
-    if (timeScore >= 3600) {
-      second = timeScore % 60;
-      menit = Math.floor((timeScore % 3600) / 60);
-      jam = Math.floor(timeScore / 3600);
-      timeNow = jam + "h" + menit + "m" + second + "s";
-    }
-    timeDisplay.innerText = timeNow;
-    // console.log(timeNow);
-  }, 1000);
+// function time() {
+//   setInterval(() => {
+//     timeScore += 1;
+//     let timeNow = "";
+//     let second = 0;
+//     let menit = 0;
+//     let jam = 0;
+//     if (timeScore < 60) {
+//       second = timeScore;
+//       timeNow = second + "s";
+//     }
+//     if (timeScore >= 60 && timeScore < 3600) {
+//       second = timeScore % 60;
+//       menit = Math.floor(timeScore / 60);
+//       timeNow = menit + "m" + second + "s";
+//     }
+//     if (timeScore >= 3600) {
+//       second = timeScore % 60;
+//       menit = Math.floor((timeScore % 3600) / 60);
+//       jam = Math.floor(timeScore / 3600);
+//       timeNow = jam + "h" + menit + "m" + second + "s";
+//     }
+//     timeDisplay.innerText = timeNow;
+//   }, 1000);
+// }
+
+let h, hh, m, mm, s, ss;
+let tm, tmx;
+function timeRecord(x) {
+  tm = x;
+  ss = detik(x);
+  mm = menit(x);
+  hh = jam(x);
+
+  tmx = hh + ":" + mm + ":" + ss;
+  return tmx;
 }
+
+function updateTime(timeNow) {
+  timeDisplay.innerText = timeNow;
+}
+
+function detik(x) {
+  s = x % 60;
+  if (s < 10) {
+    s = "0" + s;
+  }
+  return s;
+}
+
+function menit(x) {
+  m = Math.floor(x / 60);
+  m = m % 60;
+  if (m < 10) {
+    m = "0" + m;
+  }
+  return m;
+}
+function jam(x) {
+  h = Math.floor(x / 3600);
+  h = h % 60;
+  if (h < 10) {
+    h = "0" + h;
+  }
+  return h;
+}
+
 //1. membuat papan permainan
 //2. fungsi klik kanan
 // a. menampilkan kotak
