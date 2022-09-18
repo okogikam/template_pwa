@@ -72,8 +72,9 @@ board.forEach((row) => {
     boardElement.append(tile.element);
 
     tile.element.addEventListener("click", () => {
-      revealtile(board, tile);
-      checkGameEND();
+      clickTile(board, tile);
+      // revealtile(board, tile);
+      // checkGameEND();
     });
 
     tile.element.addEventListener("contextmenu", (e) => {
@@ -84,12 +85,16 @@ board.forEach((row) => {
   });
 });
 
-setInterval(() => {
+function clickTile(board, tile) {
   if (mark == "on") {
+    marktile(tile);
+    listMineLeft();
   }
   if (mark == "off") {
+    revealtile(board, tile);
+    checkGameEND();
   }
-}, 1000);
+}
 
 btnReset.addEventListener("click", () => {
   location.reload();
