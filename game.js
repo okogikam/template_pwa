@@ -130,11 +130,12 @@ btnresume.addEventListener("click", (times) => {
 btnmark.addEventListener("click", () => {
   if (mark == "off") {
     mark = "on";
-    console.log(mark);
+    // console.log(mark);
   } else {
     mark = "off";
-    console.log(mark);
+    // console.log(mark);
   }
+  btnmark.classList.toggle("active");
 });
 
 boardElement.style.setProperty("--stage", BOARD_SIZE);
