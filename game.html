@@ -34,7 +34,7 @@
       </a>
     </div>
     <div class="btn-control">
-      <button class="btn btn-default">
+      <button class="btn btn-default btn-mark">
         <i class="fa-solid fa-pen-to-square"></i>
       </button>
       <button class="btn btn-default btn-reset">
@@ -59,7 +59,7 @@
                 Times: <span data-time class="">00:00:00</span>
               </div>
               <div class="col-6 bom">
-                <span class=""
+                <span class="bom-left"
                   >Bom: <span data-mine-count></span>/ <span data-mine></span>
                 </span>
               </div>
@@ -90,6 +90,31 @@
           <a href="./score.html">
             <button type="submit" class="btn btn-primary">OK</button>
           </a>
+        </div>
+      </div>
+      <div class="tmt-score d-none">
+        <!-- Control sidebar content goes here -->
+        <div class="card info-score">
+          <div class="row">
+            <div class="col-6">
+              <p>Times:</p>
+              <p><span class="tmt-time">00:00:00</span></p>
+            </div>
+            <div class="col-6">
+              <p>Bom:</p>
+              <p><span class="tmt-bom"></span></p>
+            </div>
+          </div>
+          <div class="tmt-btn">
+            <button type="submit" class="btn btn-primary btn-resume">
+              Resume
+            </button>
+            <a href="./index.html">
+              <button type="submit" class="btn btn-danger btn-close">
+                Close
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -23,7 +23,7 @@ const level = [
   {
     stage: "hard",
     size: 20,
-    bom: 20,
+    bom: 50,
   },
 ];
 
@@ -54,21 +54,28 @@ const minesAll = document.querySelector("[data-mine]");
 const messageText = document.querySelector(".subtext");
 const score = document.querySelector(".score");
 const btnReset = document.querySelector(".btn-reset");
-const btnPlay = document.querySelector(".btn-play");
-const btnStart = document.querySelector(".btn-start-game");
+const tmttime = document.querySelector(".tmt-time");
+const tmtbom = document.querySelector(".tmt-bom");
 const btnStop = document.querySelector(".btn-stop");
+const btnresume = document.querySelector(".btn-resume");
+const btnclose = document.querySelector(".btn-close");
+const btnmark = document.querySelector(".btn-mark");
 const start = document.querySelector(".start-game");
 const timeDisplay = document.querySelector("[data-time]");
 const scoreTime = document.querySelector(".score-time");
+const tmtScore = document.querySelector(".tmt-score");
+let mark = "off";
 let timeScore = 0;
 
 board.forEach((row) => {
   row.forEach((tile) => {
     boardElement.append(tile.element);
+
     tile.element.addEventListener("click", () => {
       revealtile(board, tile);
       checkGameEND();
     });
+
     tile.element.addEventListener("contextmenu", (e) => {
       e.preventDefault();
       marktile(tile);
@@ -76,16 +83,16 @@ board.forEach((row) => {
     });
   });
 });
+
+setInterval(() => {
+  if (mark == "on") {
+  }
+  if (mark == "off") {
+  }
+}, 1000);
+
 btnReset.addEventListener("click", () => {
   location.reload();
-});
-btnStart.addEventListener("click", () => {
-  // start.classList.add("d-none");
-  // let y = setInterval(() => {
-  //   x++;
-  //   tr = timeRecord(x);
-  //   updateTime(tr);
-  // }, 1000);
 });
 start.classList.add("d-none");
 // time
@@ -95,6 +102,8 @@ let y = setInterval(() => {
   x++;
   tr = timeRecord(x);
   updateTime(tr);
+  if (mark == "on") {
+  }
 }, 1000);
 
 btnStop.addEventListener("click", (times) => {
@@ -102,13 +111,25 @@ btnStop.addEventListener("click", (times) => {
   // console.log(x);
   tr = timeRecord(x);
   updateTime(tr);
+  tmtTime(tr);
+  tmtScore.classList.toggle("d-none");
 });
-btnPlay.addEventListener("click", (times) => {
+btnresume.addEventListener("click", (times) => {
+  tmtScore.classList.toggle("d-none");
   y = setInterval(() => {
     x++;
     tr = timeRecord(x);
     updateTime(tr);
   }, 1000);
+});
+btnmark.addEventListener("click", () => {
+  if (mark == "off") {
+    mark = "on";
+    console.log(mark);
+  } else {
+    mark = "off";
+    console.log(mark);
+  }
 });
 
 boardElement.style.setProperty("--stage", BOARD_SIZE);
@@ -191,6 +212,11 @@ function timeRecord(x) {
 
   tmx = hh + ":" + mm + ":" + ss;
   return tmx;
+}
+
+function tmtTime(timeNow) {
+  tmttime.innerText = timeNow;
+  tmtbom.innerText = minesLeftText.textContent + "/" + minesAll.textContent;
 }
 
 function updateTime(timeNow) {

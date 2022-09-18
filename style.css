@@ -108,7 +108,7 @@
   display: grid;
   grid-template-columns: repeat(var(--stage), calc(90vw / var(--stage)));
   grid-template-rows: repeat(var(--stage), calc(90vw / var(--stage)));
-  background-color: var(--warning);
+  background-color: gray;
   gap: 1px;
   width: min-content;
   position: relative;
@@ -141,8 +141,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--primary);
-  border: 2px solid #888;
+  color: white;
+  font-weight: 500;
+  border: 2px solid white;
   user-select: none;
 }
 .stage > [data-status="hidden"] {
@@ -242,7 +243,8 @@
   right: 10px;
   top: 10px;
 }
-.score {
+.score,
+.tmt-score {
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -259,4 +261,15 @@
 }
 .info-score {
   padding: 30px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  /* align-items: center; */
+}
+.tmt-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  justify-content: space-between;
 }
