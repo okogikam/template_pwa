@@ -277,3 +277,16 @@
   background-color: #17a2b8;
   color: white;
 }
+.install {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #17a2b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
