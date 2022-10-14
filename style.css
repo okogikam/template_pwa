@@ -33,13 +33,18 @@
   padding: 5px 0px;
 }
 .menu-link {
-  font-size: 30px;
+  font-size: 25px;
   color: var(--white);
   /* background-color: black; */
+  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
+}
+.menu-link:hover {
+  color: var(--white);
+  /* box-shadow: 4px -4px 5px 1px var(--primary); */
 }
 .menu-link span {
   font-size: 12px;
@@ -266,6 +271,10 @@
   position: relative;
   /* align-items: center; */
 }
+.btn:hover {
+  background-color: #17a2b8;
+  color: #fff;
+}
 .tmt-btn {
   position: absolute;
   bottom: 10px;
@@ -275,7 +284,10 @@
 }
 .active {
   background-color: #17a2b8;
-  color: white;
+  color: #fff;
+}
+i {
+  cursor: pointer;
 }
 .install {
   position: fixed;
@@ -289,4 +301,19 @@
   align-items: center;
 
   z-index: 999;
+}
+
+.toturial {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #17a2b8;
+}
+.toturial .card {
+  width: 90%;
 }

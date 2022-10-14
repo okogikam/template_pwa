@@ -49,9 +49,15 @@ if (databasescore !== null) {
   btnInstall.addEventListener("click", () => {
     newscore = JSON.stringify(score);
     install(newscore);
+    window.location("./index.html");
   });
 }
 
 function install(score) {
   localStorage.setItem("dataScore", score);
 }
+
+window.addEventListener("load", () => {
+  let install = document.querySelector(".install-pwa");
+  install.classList.toggle("d-none");
+});

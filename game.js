@@ -60,6 +60,7 @@ const btnStop = document.querySelector(".btn-stop");
 const btnresume = document.querySelector(".btn-resume");
 const btnclose = document.querySelector(".btn-close");
 const btnmark = document.querySelector(".btn-mark");
+const btnsimpan = document.querySelector(".btn-simpan");
 const start = document.querySelector(".start-game");
 const timeDisplay = document.querySelector("[data-time]");
 const scoreTime = document.querySelector(".score-time");
@@ -98,6 +99,9 @@ function clickTile(board, tile) {
 
 btnReset.addEventListener("click", () => {
   location.reload();
+});
+btnsimpan.addEventListener("click", () => {
+  simpanscore();
 });
 start.classList.add("d-none");
 // time
@@ -181,7 +185,33 @@ function checkGameEND() {
 function stopProp(e) {
   e.stopImmediatePropagation();
 }
+// simpanscore();
+function simpanscore() {
+  let databasescore = localStorage.getItem("dataScore");
+  let nama = document.querySelector("input[name]");
 
+  databasescore = JSON.parse(databasescore);
+  if (x != 0) {
+    let y = {
+      nama: nama.value,
+      time: timeRecord(x),
+    };
+    siempan(y, stage, databasescore);
+    console.log(y);
+  }
+}
+
+function siempan(y, stage, databasescore) {
+  if (stage == "eazy") {
+    databasescore.eazy.push(y);
+    let newy = JSON.stringify(y);
+    localStorage.setItem("dataScore", newy);
+  }
+  if (stage == "medium") {
+  }
+  if (stage == "hard") {
+  }
+}
 // function time() {
 //   setInterval(() => {
 //     timeScore += 1;

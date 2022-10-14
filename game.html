@@ -22,31 +22,32 @@
       crossorigin="anonymous"
     ></script>
     <script src="./game.js" type="module"></script>
+    <!-- <script src="./memory.js" type="module"></script> -->
     <style></style>
   </head>
   <body class="hold-transition content">
     <!-- Automatic element centering -->
     <div class="btn-back">
       <a href="index.html">
-        <button class="btn btn-default">
+        <button class="btn btn-sm">
           <i class="fa-solid fa-arrow-left-long"></i>
         </button>
       </a>
     </div>
     <div class="btn-control">
-      <button class="btn btn-default btn-mark">
+      <button class="btn btn-sm btn-mark">
         <i class="fa-solid fa-pen-to-square"></i>
       </button>
-      <button class="btn btn-default btn-reset">
+      <button class="btn btn-sm btn-reset">
         <i class="fa-solid fa-rotate-right"></i>
       </button>
       <button class="btn btn-default btn-play d-none">
         <i class="fa-solid fa-play"></i>
       </button>
-      <button class="btn btn-default btn-stop">
+      <button class="btn btn-sm btn-stop">
         <i class="fa-solid fa-pause"></i>
       </button>
-      <button class="btn btn-default">
+      <button class="btn btn-sm">
         <i class="fa-solid fa-circle-info"></i>
       </button>
     </div>
@@ -87,9 +88,8 @@
             <p>Your Times:</p>
             <p><span class="score-time"></span></p>
           </div>
-          <a href="./score.html">
-            <button type="submit" class="btn btn-primary">OK</button>
-          </a>
+
+          <button type="submit" class="btn btn-primary btn-simpan">OK</button>
         </div>
       </div>
       <div class="tmt-score d-none">
@@ -118,14 +118,52 @@
         </div>
       </div>
     </div>
+    <aside>
+      <div class="toturial d-none">
+        <div class="card">
+          <div class="card-body">
+            <h3>
+              How to play
+              <i
+                class="float-right nav-item fa-regular fa-circle-xmark close-torurial"
+              ></i>
+            </h3>
+            <p>
+              1. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consectetur, mollitia.
+            </p>
+            <p>
+              2. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consectetur, mollitia.
+            </p>
+            <p>
+              3. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consectetur, mollitia.
+            </p>
+            <p>
+              4. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consectetur, mollitia.
+            </p>
+            <p>
+              5. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consectetur, mollitia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </aside>
 
     <script>
-      // let btnStop = document.querySelector(".stop");
-      // let scoreInfo = document.querySelector(".score");
+      let btnStop = document.querySelector(".fa-circle-info");
+      let btnCloseToturial = document.querySelector(".close-torurial");
+      let toturial = document.querySelector(".toturial");
 
-      // btnStop.addEventListener("click", function () {
-      //   scoreInfo.classList.toggle("d-none");
-      // });
+      btnStop.addEventListener("click", function () {
+        toturial.classList.toggle("d-none");
+      });
+      btnCloseToturial.addEventListener("click", function () {
+        toturial.classList.toggle("d-none");
+      });
     </script>
   </body>
 </html>
