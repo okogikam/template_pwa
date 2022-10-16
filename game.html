@@ -79,17 +79,19 @@
       <div class="score d-none">
         <!-- Control sidebar content goes here -->
         <div class="card info-score">
-          <div>
-            <p><span class="subtext"></span></p>
-            <p>Rank: 1</p>
-          </div>
-          <div>
-            <p><input type="text" placeholder="name" name="name" /></p>
-            <p>Your Times:</p>
-            <p><span class="score-time"></span></p>
-          </div>
+          <form action="savescore.html" method="post">
+            <div>
+              <p><span class="subtext"></span></p>
+              <p>Rank: 1</p>
+            </div>
+            <div>
+              <p><input type="text" placeholder="name" name="name" /></p>
+              <p>Your Times:</p>
+              <p><span class="score-time"></span></p>
+            </div>
 
-          <button type="submit" class="btn btn-primary btn-simpan">OK</button>
+            <button type="submit" class="btn btn-primary btn-simpan">OK</button>
+          </form>
         </div>
       </div>
       <div class="tmt-score d-none">

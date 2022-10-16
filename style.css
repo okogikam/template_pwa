@@ -11,6 +11,10 @@
 .lockscreen-item {
   text-align: center;
 }
+.active {
+  background-color: #17a2b8;
+  color: #fff;
+}
 .icon {
   width: 50vw;
   height: 50vw;
@@ -22,7 +26,6 @@
   margin: 10px auto;
 }
 .menu {
-  /* width: 100vw; */
   background-color: var(--primary);
   position: fixed;
   bottom: 0px;
@@ -34,27 +37,25 @@
 }
 .menu-link {
   font-size: 25px;
-  color: var(--white);
-  /* background-color: black; */
-  /* position: absolute; */
+  color: var(--black);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
+  padding: 3px 5px;
 }
 .menu-link:hover {
   color: var(--white);
-  /* box-shadow: 4px -4px 5px 1px var(--primary); */
 }
 .menu-link span {
   font-size: 12px;
 }
-
+.menu .active-link {
+  color: var(--white);
+  background-color: transparent !important;
+}
 .card-img img {
   max-width: 100%;
-  /* position: absolute; */
-  /* top: -50px; */
-  /* left: 30px; */
   transition: 1s;
 
   border-radius: 10px;
@@ -282,10 +283,7 @@
   right: 10px;
   justify-content: space-between;
 }
-.active {
-  background-color: #17a2b8;
-  color: #fff;
-}
+
 i {
   cursor: pointer;
 }
