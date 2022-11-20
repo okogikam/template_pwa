@@ -6,12 +6,12 @@ window.addEventListener("load", () => {
 
 var installPwa = document.querySelector(".install-pwa");
 
-function showInstallPromotion() {
-  installPwa.style.display = "block";
-}
-function hideInstallPromotion() {
-  installPwa.style.display = "none";
-}
+// function showInstallPromotion() {
+//   installPwa.style.display = "block";
+// }
+// function hideInstallPromotion() {
+//   installPwa.style.display = "none";
+// }
 
 // Initialize deferredPrompt for use later to show browser install prompt.
 let deferredPrompt;
@@ -22,7 +22,7 @@ window.addEventListener("beforeinstallprompt", (e) => {
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
   // Update UI notify the user they can install the PWA
-  showInstallPromotion();
+  // showInstallPromotion();
   // Optionally, send analytics event that PWA install promo was shown.
   console.log(`'beforeinstallprompt' event was fired.`);
 });
